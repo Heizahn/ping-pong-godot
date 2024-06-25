@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3e6csppp6yd3"]
+[gd_scene load_steps=7 format=3 uid="uid://b3e6csppp6yd3"]
 
 [ext_resource type="PackedScene" uid="uid://dcp35eyyko480" path="res://Scenes/background.tscn" id="1_bk54m"]
 [ext_resource type="PackedScene" uid="uid://jo1pxl3k1s2y" path="res://Scenes/player.tscn" id="1_jkit7"]
 [ext_resource type="PackedScene" uid="uid://o4s0wr1nhjak" path="res://Scenes/enemy.tscn" id="2_t5dk8"]
 [ext_resource type="PackedScene" uid="uid://dt2qwbc1d02h2" path="res://Scenes/ball.tscn" id="3_odw6q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6yehh"]
+size = Vector2(1377, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g5dws"]
+size = Vector2(44, 272.5)
 
 [node name="MainScene" type="Node2D"]
 
@@ -11,11 +17,39 @@
 position = Vector2(680, 360)
 scale = Vector2(1.69576, 1.58242)
 
+[node name="ball" parent="." instance=ExtResource("3_odw6q")]
+position = Vector2(680, 360)
+collision_layer = 7
+collision_mask = 7
+
 [node name="Player" parent="." instance=ExtResource("1_jkit7")]
 position = Vector2(97, 354)
 
 [node name="enemy" parent="." instance=ExtResource("2_t5dk8")]
 position = Vector2(1262, 358)
 
-[node name="ball" parent="." instance=ExtResource("3_odw6q")]
-position = Vector2(680, 360)
+[node name="Wall" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+position = Vector2(678.5, 0)
+shape = SubResource("RectangleShape2D_6yehh")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Wall"]
+position = Vector2(679, 726)
+shape = SubResource("RectangleShape2D_6yehh")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Wall"]
+position = Vector2(-13, 121.75)
+shape = SubResource("RectangleShape2D_g5dws")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Wall"]
+position = Vector2(-16, 601)
+shape = SubResource("RectangleShape2D_g5dws")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Wall"]
+position = Vector2(1371, 119)
+shape = SubResource("RectangleShape2D_g5dws")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Wall"]
+position = Vector2(1368, 598.25)
+shape = SubResource("RectangleShape2D_g5dws")

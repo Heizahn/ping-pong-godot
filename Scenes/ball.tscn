@@ -1,13 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://dt2qwbc1d02h2"]
+[gd_scene load_steps=4 format=3 uid="uid://dt2qwbc1d02h2"]
 
 [ext_resource type="Texture2D" uid="uid://cmq8tt7fey3ay" path="res://Assets/arts/Ball.png" id="1_4rsx7"]
+[ext_resource type="Script" path="res://Scripts/ball.gd" id="1_mvyia"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bt74q"]
 radius = 23.0868
 
-[node name="ball" type="RigidBody2D"]
-gravity_scale = 0.0
-freeze_mode = 1
+[node name="ball" type="CharacterBody2D"]
+disable_mode = 1
+script = ExtResource("1_mvyia")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1.5, 1.5)
@@ -15,3 +16,8 @@ texture = ExtResource("1_4rsx7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_bt74q")
+
+[node name="Contador" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Contador" to="." method="_on_contador_timeout"]
