@@ -1,16 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3e6csppp6yd3"]
+[gd_scene load_steps=5 format=3 uid="uid://b3e6csppp6yd3"]
 
+[ext_resource type="PackedScene" uid="uid://dcp35eyyko480" path="res://Scenes/background.tscn" id="1_bk54m"]
 [ext_resource type="PackedScene" uid="uid://jo1pxl3k1s2y" path="res://Scenes/player.tscn" id="1_jkit7"]
 [ext_resource type="PackedScene" uid="uid://o4s0wr1nhjak" path="res://Scenes/enemy.tscn" id="2_t5dk8"]
 [ext_resource type="PackedScene" uid="uid://dt2qwbc1d02h2" path="res://Scenes/ball.tscn" id="3_odw6q"]
 
 [node name="MainScene" type="Node2D"]
 
+[node name="background" parent="." instance=ExtResource("1_bk54m")]
+position = Vector2(680, 360)
+scale = Vector2(1.69576, 1.58242)
+
 [node name="Player" parent="." instance=ExtResource("1_jkit7")]
-position = Vector2(97, 331)
+position = Vector2(97, 354)
 
 [node name="enemy" parent="." instance=ExtResource("2_t5dk8")]
-position = Vector2(1262, 339)
+position = Vector2(1262, 358)
 
 [node name="ball" parent="." instance=ExtResource("3_odw6q")]
-position = Vector2(675, 328)
+position = Vector2(680, 360)

@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://jo1pxl3k1s2y"]
+[gd_scene load_steps=4 format=3 uid="uid://jo1pxl3k1s2y"]
 
 [ext_resource type="Texture2D" uid="uid://cm2rogghdx11t" path="res://Assets/arts/Player.png" id="1_3surp"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_v6msg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2wnb"]
 size = Vector2(15, 118)
 
 [node name="Player" type="RigidBody2D"]
 gravity_scale = 0.0
+script = ExtResource("1_v6msg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_3surp")
