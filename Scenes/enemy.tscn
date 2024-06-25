@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://o4s0wr1nhjak"]
+[gd_scene load_steps=3 format=3 uid="uid://o4s0wr1nhjak"]
 
 [ext_resource type="Texture2D" uid="uid://ca76twhtjlprv" path="res://Assets/arts/Computer.png" id="1_awk0u"]
 
-[node name="enemy" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3w4de"]
+size = Vector2(15, 118)
+
+[node name="enemy" type="RigidBody2D"]
+gravity_scale = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_awk0u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_3w4de")
